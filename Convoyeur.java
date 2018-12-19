@@ -2,16 +2,16 @@ package ProjetAtelier;
 
 public class Convoyeur {
 	
-	protected int numeroMachine;
-	protected int tempsDeplacementParcelle;
-	protected double prioriteStock;
-	protected int numeroConvoyeur;
-	protected double coefficientDeplacement;
+	protected int iNumeroMachine;
+	protected int iTempsDeplacementParcelle;
+	protected double dPrioriteStock;
+	protected int iNumeroConvoyeur;
+	protected double dCoefficientDeplacement;
 	
-	public Convoyeur(int numeroConvoyeur, double coefficientDeplacement) {
+	public Convoyeur(int iNumeroConvoyeur, double dCoefficientDeplacement) {
 		super();
-		this.numeroConvoyeur = numeroConvoyeur;
-		this.coefficientDeplacement = coefficientDeplacement;
+		this.iNumeroConvoyeur = iNumeroConvoyeur;
+		this.dCoefficientDeplacement = dCoefficientDeplacement;
 	}
 	
 	public void deplace()
@@ -20,22 +20,22 @@ public class Convoyeur {
 	}
 	
 	public int getNumeroMachine() {
-		return numeroMachine;
+		return iNumeroMachine;
 	}
-	public void setNumeroMachine(int numeroMachine) {
-		this.numeroMachine = numeroMachine;
+	public void setNumeroMachine(int iNumeroMachine) {
+		this.iNumeroMachine = iNumeroMachine;
 	}
 	public double getPrioriteStock() {
-		return prioriteStock;
+		return dPrioriteStock;
 	}
-	public void setPrioriteStock(double prioriteStock) {
-		this.prioriteStock = prioriteStock;
+	public void setPrioriteStock(double dPrioriteStock) {
+		this.dPrioriteStock = dPrioriteStock;
 	}
 	public int getTempsDeplacementParcelle() {
-		return tempsDeplacementParcelle;
+		return iTempsDeplacementParcelle;
 	}
-	public void setTempsDeplacementParcelle(int tempsDeplacementParcelle) {
-		this.tempsDeplacementParcelle = tempsDeplacementParcelle;
+	public void setTempsDeplacementParcelle(int iTempsDeplacementParcelle) {
+		this.iTempsDeplacementParcelle = iTempsDeplacementParcelle;
 	}
 	
 }

@@ -6,8 +6,8 @@ import java.util.List;
 public class Gamme {
 
 	// Attributes
-	protected int numProduit;
-	protected String nomProduit;
+	protected int iNumProduit;
+	protected String sNomProduit;
 	protected List<Phase> lesPhases;
 	
 	public Gamme()
@@ -17,12 +17,12 @@ public class Gamme {
 	
 	/**
 	 * Constructor
-	 * @param numProduit Product number
-	 * @param nomProduit Product name
+	 * @param iNumProduit Product number
+	 * @param sNomProduit Product name
 	 */
-	public Gamme(int numProduit, String nomProduit) {
-		this.numProduit = numProduit;
-		this.nomProduit = nomProduit;
+	public Gamme(int iNumProduit, String sNomProduit) {
+		this.iNumProduit = iNumProduit;
+		this.sNomProduit = sNomProduit;
 		this.lesPhases = new ArrayList<Phase>();
 	}
 	
@@ -34,25 +34,25 @@ public class Gamme {
 		System.out.println("Voici les différentes phases de la gamme : ");
 		for(Phase laPhase : lesPhases)
 		{
-			System.out.println(laPhase.numeroPhase + " - " + laPhase.typeOperation.nomOperation + " qui dure : " + laPhase.tempsRealisation);
+			System.out.println(laPhase.iNumeroPhase + " - " + laPhase.typeOperation.sNomOperation + " qui dure : " + laPhase.iTempsRealisation);
 		}
 	}
 
 	// Getters/Setter
 	public int getNumProduit() {
-		return numProduit;
+		return iNumProduit;
 	}
 
-	public void setNumProduit(int numProduit) {
-		this.numProduit = numProduit;
+	public void setNumProduit(int iNumProduit) {
+		this.iNumProduit = iNumProduit;
 	}
 
 	public String getNomProduit() {
-		return nomProduit;
+		return sNomProduit;
 	}
 
-	public void setNomProduit(String nomProduit) {
-		this.nomProduit = nomProduit;
+	public void setNomProduit(String sNomProduit) {
+		this.sNomProduit = sNomProduit;
 	}
 
 	public List<Phase> getLesPhases() {

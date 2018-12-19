@@ -2,32 +2,32 @@ package ProjetAtelier;
 
 public class Ilot {
 
-	protected int numeroIlot;
-	protected String typeIlot;
+	protected int iNumeroIlot;
+	protected String sTypeIlot;
 	protected static Machine[] lesMachines;
-	protected int parcelle;
-	protected int nombreObjetTotal;
+	protected int iParcelle;
+	protected int iNombreObjetTotal;
 	
 	/**
 	 * Manage the priority that is assigned to an object for each machine
-	 * @param nombreObjetTotal Object total
+	 * @param iNombreObjetTotal Object total
 	 * @return Priority per object
 	 */
-	public double prioriteParObjet(int nombreObjetTotal){
-		double prioriteParObjet = 100/nombreObjetTotal; 
-		return prioriteParObjet;
+	public double prioriteParObjet(int iNombreObjetTotal){
+		double dPrioriteParObjet = 100/iNombreObjetTotal; 
+		return dPrioriteParObjet;
 	}
 	
 	/**
 	 * Manage the priority assigned to the machine
-	 * @param nombreObjetFile Waiting object number
-	 * @param prioriteParObjet Priority per object
+	 * @param iNombreObjetFile Waiting object number
+	 * @param dPrioriteParObjet Priority per object
 	 * @return Priority
 	 */
-	public double prioriteMachine(int nombreObjetFile, double prioriteParObjet)
+	public double prioriteMachine(int iNombreObjetFile, double dPrioriteParObjet)
 	{
-		double priorite = nombreObjetFile*prioriteParObjet;
-		return priorite;
+		double dPriorite = iNombreObjetFile*dPrioriteParObjet;
+		return dPriorite;
 	}
 	
 	/**
@@ -36,38 +36,38 @@ public class Ilot {
 	public static void afficherLesMachines(){
 		for(Machine laMachine : lesMachines)
 		{
-			System.out.println(laMachine.numeroMachine + " - " + laMachine.Operation);
+			System.out.println(laMachine.iNumeroMachine + " - " + laMachine.Operation);
 		}
 	}
 	
 	/**
 	 * Constructor
-	 * @param numeroIlot Island number
-	 * @param typeIlot Island type
+	 * @param iNumeroIlot Island number
+	 * @param sTypeIlot Island type
 	 * @param Location
 	 */
-	public Ilot(int numeroIlot, String typeIlot, int parcelle) {
+	public Ilot(int iNumeroIlot, String sTypeIlot, int iParcelle) {
 		super();
-		this.numeroIlot = numeroIlot;
-		this.typeIlot = typeIlot;
-		this.parcelle = parcelle;
+		this.iNumeroIlot = iNumeroIlot;
+		this.sTypeIlot = sTypeIlot;
+		this.iParcelle = iParcelle;
 	}
 
 	//Getters/Settters
 	public int getNombreObjetTotal() {
-		return nombreObjetTotal;
+		return iNombreObjetTotal;
 	}
 
-	public void setNombreObjetTotal(int nombreObjetTotal) {
-		this.nombreObjetTotal = nombreObjetTotal;
+	public void setNombreObjetTotal(int iNombreObjetTotal) {
+		this.iNombreObjetTotal = iNombreObjetTotal;
 	}
 
 	public String getTypeIlot() {
-		return typeIlot;
+		return sTypeIlot;
 	}
 
-	public void setTypeIlot(String typeIlot) {
-		this.typeIlot = typeIlot;
+	public void setTypeIlot(String sTypeIlot) {
+		this.sTypeIlot = sTypeIlot;
 	}
 
 	public Machine[] getLesMachines() {
@@ -79,19 +79,19 @@ public class Ilot {
 	}
 
 	public int getParcelle() {
-		return parcelle;
+		return iParcelle;
 	}
 
-	public void setParcelle(int parcelle) {
-		this.parcelle = parcelle;
+	public void setParcelle(int iParcelle) {
+		this.iParcelle = iParcelle;
 	}
 
 	public int getNumeroIlot() {
-		return numeroIlot;
+		return iNumeroIlot;
 	}
 
-	public void setNumeroIlot(int numeroIlot) {
-		this.numeroIlot = numeroIlot;
+	public void setNumeroIlot(int iNumeroIlot) {
+		this.iNumeroIlot = iNumeroIlot;
 	}
 	
 	
