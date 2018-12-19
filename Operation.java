@@ -3,9 +3,9 @@ package ProjetAtelier;
 public class Operation {
 
 	//Attributes
-	protected int idOperation; 
-	protected String nomOperation;
-	protected String typeMachine;
+	protected int iIdOperation; 
+	protected String sNomOperation;
+	protected String sTypeMachine;
 	
 	public Operation() {
 		//TO DO
@@ -13,35 +13,35 @@ public class Operation {
 	
 	/**
 	 * Constructor
-	 * @param idOperation id of the operation
-	 * @param nomOperation name of the operation
-	 * @param typeMachine type of the machine
+	 * @param iIdOperation id of the operation
+	 * @param sNomOperation name of the operation
+	 * @param sTypeMachine type of the machine
 	 */
-	public Operation(int idOperation, String nomOperation, String typeMachine) {
+	public Operation(int iIdOperation, String sNomOperation, String sTypeMachine) {
 		super();
-		this.idOperation = idOperation;
-		this.nomOperation = nomOperation;
-		this.typeMachine = typeMachine;
+		this.iIdOperation = iIdOperation;
+		this.sNomOperation = sNomOperation;
+		this.sTypeMachine = sTypeMachine;
 	}
 	
 	
 	// Getters/Setters
 	public int getIdOperation() {
-		return idOperation;
+		return iIdOperation;
 	}
-	public void setIdOperation(int idOperation) {
-		this.idOperation = idOperation;
+	public void setIdOperation(int iIdOperation) {
+		this.iIdOperation = iIdOperation;
 	}
 	public String getNomOperation() {
-		return nomOperation;
+		return sNomOperation;
 	}
-	public void setNomOperation(String nomOperation) {
-		this.nomOperation = nomOperation;
+	public void setNomOperation(String sNomOperation) {
+		this.sNomOperation = sNomOperation;
 	}
 	public String getTypeMachine() {
-		return typeMachine;
+		return sTypeMachine;
 	}
-	public void setTypeMachine(String typeMachine) {
-		this.typeMachine = typeMachine;
+	public void setTypeMachine(String sTypeMachine) {
+		this.sTypeMachine = sTypeMachine;
 	}
 }

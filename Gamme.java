@@ -10,6 +10,9 @@ public class Gamme {
 	protected String sNomProduit;
 	protected List<Phase> lesPhases;
 	
+	/**
+	 * Empty constructor
+	 */
 	public Gamme()
 	{
 		this.lesPhases = new ArrayList<Phase>();

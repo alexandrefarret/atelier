@@ -8,15 +8,15 @@ public class Convoyeur {
 	protected int iNumeroConvoyeur;
 	protected double dCoefficientDeplacement;
 	
+	/**
+	 * Constructor
+	 * @param iNumeroConvoyeur The number of the conveyor
+	 * @param dCoefficientDeplacement Moving coeff
+	 */
 	public Convoyeur(int iNumeroConvoyeur, double dCoefficientDeplacement) {
 		super();
 		this.iNumeroConvoyeur = iNumeroConvoyeur;
 		this.dCoefficientDeplacement = dCoefficientDeplacement;
-	}
-	
-	public void deplace()
-	{
-		
 	}
 	
 	public int getNumeroMachine() {

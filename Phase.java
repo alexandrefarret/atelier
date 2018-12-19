@@ -5,11 +5,11 @@ import ProjetAtelier.Operation;
 public class Phase {
 
 	// Attributes 
-	protected int numeroPhase;
+	protected int iNumeroPhase;
 	protected Operation typeOperation;
-	protected int tempsRealisation;
-	protected String dateDebutPhase;
-	protected String dateFinPhase;
+	protected int iTempsRealisation;
+	protected String sDateDebutPhase;
+	protected String sDateFinPhase;
 	
 	public Phase()
 	{
@@ -18,25 +18,25 @@ public class Phase {
 	
 	/**
 	 * Constructor	
-	 * @param numeroPhase Phase number
+	 * @param iNumeroPhase Phase number
 	 * @param typeOperation operation type
-	 * @param tempsRealisation completion time
-	 * @param dateDebutPhase start date of the phase
-	 * @param dateFinPhase end date of the phase	
+	 * @param iTempsRealisation completion time
+	 * @param sDateDebutPhase start date of the phase
+	 * @param sDateFinPhase end date of the phase	
 	 */
-	public Phase(int numeroPhase, Operation typeOperation, int tempsRealisation, String dateDebutPhase,
-			String dateFinPhase) {
+	public Phase(int iNumeroPhase, Operation typeOperation, int iTempsRealisation, String sDateDebutPhase,
+			String sDateFinPhase) {
 		super();
-		this.numeroPhase = numeroPhase;
+		this.iNumeroPhase = iNumeroPhase;
 		this.typeOperation = typeOperation;
-		this.tempsRealisation = tempsRealisation;
-		this.dateDebutPhase = dateDebutPhase;
-		this.dateFinPhase = dateFinPhase;
+		this.iTempsRealisation = iTempsRealisation;
+		this.sDateDebutPhase = sDateDebutPhase;
+		this.sDateFinPhase = sDateFinPhase;
 	}
 	
-	public boolean contains(int unId)
+	public boolean contains(int iUnId)
 	{
-		if(this.numeroPhase == unId)
+		if(this.iNumeroPhase == iUnId)
 		{
 			return true;
 		}
@@ -48,10 +48,10 @@ public class Phase {
 	
 	// Getters/Setters
 	public int getNumeroPhase() {
-		return numeroPhase;
+		return iNumeroPhase;
 	}
 	public void setNumeroPhase(int numeroPhase) {
-		this.numeroPhase = numeroPhase;
+		this.iNumeroPhase = numeroPhase;
 	}
 	public Operation getTypeOperation() {
 		return typeOperation;
@@ -60,21 +60,21 @@ public class Phase {
 		this.typeOperation = typeOperation;
 	}
 	public int getTempsRealisation() {
-		return tempsRealisation;
+		return iTempsRealisation;
 	}
-	public void setTempsRealisation(int tempsRealisation) {
-		this.tempsRealisation = tempsRealisation;
+	public void setTempsRealisation(int iTempsRealisation) {
+		this.iTempsRealisation = iTempsRealisation;
 	}
 	public String getDateDebutPhase() {
-		return dateDebutPhase;
+		return sDateDebutPhase;
 	}
-	public void setDateDebutPhase(String dateDebutPhase) {
-		this.dateDebutPhase = dateDebutPhase;
+	public void setDateDebutPhase(String sDateDebutPhase) {
+		this.sDateDebutPhase = sDateDebutPhase;
 	}
 	public String getDateFinPhase() {
-		return dateFinPhase;
+		return sDateFinPhase;
 	}
-	public void setDateFinPhase(String dateFinPhase) {
-		this.dateFinPhase = dateFinPhase;
+	public void setDateFinPhase(String sDateFinPhase) {
+		this.sDateFinPhase = sDateFinPhase;
 	}
 }

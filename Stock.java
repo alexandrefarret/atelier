@@ -1,10 +1,3 @@
-//=============================================================================//
-//                    Nom du fichier : "Stock.java"                            //
-//                    Auteur         : Alexandre Farret                        //
-//                    Date création  : 12/12/2018                              //
-//                    Date MAJ       : 15/12/2018                              //
-//=============================================================================//
-
 package ProjetAtelier;
 
 import java.util.LinkedList;
@@ -13,9 +6,9 @@ import java.util.List;
 public class Stock 
 {
 //******* Attributs *******//
-	protected int taille;
+	protected int iTaille;
 	protected List<Phase> listeElement;
-	protected int nbPlaces;
+	protected int iNbPlaces;
 	
 //******* Méthodes *******//
 	
@@ -24,39 +17,39 @@ public class Stock
 		//TODO
 	}
 	/**
-	 * Constructeur	
-	 * @param places Nombre de places de la file
+	 * Constructor	
+	 * @param iPlaces Number of seats in the queue
 	 */
-	public Stock(int places)
+	public Stock(int iPlaces)
 	{
 		listeElement = new LinkedList<Phase>(); //Instanciation
-		nbPlaces = places;
-		taille = 0;
+		iNbPlaces = iPlaces;
+		iTaille = 0;
 	}
 
-	//Ajout d'une phase (correspondant à un objet précis) dans la liste	
+	//Adding a phase (corresponding to a specific object) in the list	
 	public boolean ajouterElement(Phase nouvelObjet)
 	{
-		if ( this.tailleStock() >= nbPlaces )
+		if ( this.tailleStock() >= iNbPlaces )
 		{
 			return false;
 		}
 		listeElement.add(nouvelObjet);
-		taille = listeElement.size();
+		iTaille = listeElement.size();
 		return true;
 	}
 	
-	//Supprime le dernier élément de la file (méthode FIFO)
+	//Deletes the last item in the waiting line (FIFO method)
 	public void enleverElement()
 	{
 		listeElement.remove(0);
-		taille = listeElement.size();
+		iTaille = listeElement.size();
 	}
 	
-	//Retourne le nombre d'élément dans la file
-	public int tailleStock() { return taille; }
+	//Returns the number of items in the waiting line
+	public int tailleStock() { return iTaille; }
 	
-	//Affiche la file
+	//Poster the waiting line
 	public void afficherStock()
 	{
 		for(int i = 0; i < listeElement.size(); i++)
@@ -64,17 +57,17 @@ public class Stock
 		  System.out.println("Position : " + i + " " + listeElement.get(i));
 		}
 	}
-	
-	//Retourne le prochain objet qui va subir une opération
+
+//******* Getter and Setter *******//
 	public Phase prochainElement()
 	{
 		return listeElement.get(0);
 	}
 	public int getTaille() {
-		return taille;
+		return iTaille;
 	}
-	public void setTaille(int taille) {
-		this.taille = taille;
+	public void setTaille(int iTaille) {
+		this.iTaille = iTaille;
 	}
 	public List<Phase> getListeElement() {
 		return listeElement;
@@ -83,9 +76,9 @@ public class Stock
 		this.listeElement = listeElement;
 	}
 	public int getNbPlaces() {
-		return nbPlaces;
+		return iNbPlaces;
 	}
-	public void setNbPlaces(int nbPlaces) {
-		this.nbPlaces = nbPlaces;
+	public void setNbPlaces(int iNbPlaces) {
+		this.iNbPlaces = iNbPlaces;
 	}
 }

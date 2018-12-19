@@ -40,7 +40,7 @@ public class Atelier {
 	 * Create time between parcels
 	 * @param iNombreParcelles Parcel number
 	 */
-	public void creationTempsParcelle(int iNombreParcelles){
+	public void creationTempsParcelle(){
 		int n;
 		//Creation of the number of parcels
 		iTTempsTransfertParcelle = new int[iNombreParcelles][iNombreParcelles];
@@ -71,8 +71,8 @@ public class Atelier {
 	public Atelier(String sAtelier, int iNombreParcelles) {
 		this.sAtelier = sAtelier;
 		this.lesIlots = new ArrayList<Ilot>();
-		creationTempsParcelle(iNombreParcelles);
 		this.iNombreParcelles = iNombreParcelles;
+		creationTempsParcelle();
 	}
 	
 	/**
@@ -80,9 +80,16 @@ public class Atelier {
 	 * @param i An integer
 	 * @param o An integer
 	 */
-	public void afficher(int i, int n)
+	public void afficher()
 	{
-		System.out.println(iTTempsTransfertParcelle[i][n]);
+		for(int i =0;i<iNombreParcelles;i++)
+		{
+			for(int n = 0;n<iNombreParcelles;n++)
+			{
+				System.out.print(" | " + iTTempsTransfertParcelle[i][n]+ " | ");
+			}
+			System.out.println();
+		}
 	}
 	
 	// Getters/Setters

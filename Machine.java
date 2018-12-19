@@ -1,10 +1,3 @@
-//=============================================================================//
-//                    Name of file : "Machine.java"                            //
-//                    Author         : Alexandre Farret                        //
-//                    Creation date  : 12/12/2018                              //
-//                    Last update       : 16/12/2018                           //
-//=============================================================================//
-
 package ProjetAtelier;
 
 import ProjetAtelier.Phase;
@@ -12,46 +5,47 @@ import ProjetAtelier.Phase;
 public class Machine 
 {
 	//******* Attributes *******//
-	protected int numeroMachine;
+	protected int iNumeroMachine;
 	protected Operation Operation;
-	protected double coeffVitesse;
+	protected double dCoeffVitesse;
 	protected Stock fileEntree;
 	protected Stock fileSortie;
-	protected int nbPlacesEntree;
-	protected int nbPlacesSortie;
+	protected int iNbPlacesEntree;
+	protected int iNbPlacesSortie;
 	protected Ilot ilotMachine;
 	
 	//******* Methods *******//
 	
 	public Machine()
 	{
-	}
+	} 
+	
 	/**
 	 * Constructor	
-	 * @param numero number of machine
-	 * @param vitesse speed of the machine
+	 * @param iNumero number of machine
+	 * @param dVitesse speed of the machine
 	 * @param fonction Operation of machine
-	 * @param placeEntree Number of places in entry
-	 * @param placeSortie Number of places in out
+	 * @param iPlaceEntree Number of places in entry
+	 * @param iPlaceSortie Number of places in out
 	 * @param ilotMachine Ilot of the machine
 	 */
-	public Machine(int numero, double vitesse, Operation fonction, int placeEntree, int placeSortie, Ilot ilotMachine)
+	public Machine(int iNumero, double dVitesse, Operation fonction, int iPlaceEntree, int iPlaceSortie, Ilot ilotMachine)
 	{
-		fileEntree = new Stock(placeEntree);
-		fileSortie = new Stock(placeSortie);
-		coeffVitesse = vitesse;
-		numeroMachine = numero;
+		fileEntree = new Stock(iPlaceEntree);
+		fileSortie = new Stock(iPlaceSortie);
+		dCoeffVitesse = dVitesse;
+		iNumeroMachine = iNumero;
 		Operation = fonction;
-		nbPlacesEntree = placeEntree;
-		nbPlacesSortie = placeSortie;
+		iNbPlacesEntree = iPlaceEntree;
+		iNbPlacesSortie = iPlaceSortie;
 		this.ilotMachine = ilotMachine;
 	}
 	
 	// To add an element of entry list
 	public boolean ajouterObjet(Phase obj)
 	{
-		boolean reponse = fileEntree.ajouterElement(obj);
-		return reponse;
+		boolean bReponse = fileEntree.ajouterElement(obj);
+		return bReponse;
 	}
 	
 	 
@@ -65,8 +59,8 @@ public class Machine
 	public boolean operation()
 	{
 		Phase objetPret = fileEntree.prochainElement();
-		boolean verdict = fileSortie.ajouterElement(objetPret);
-		if (verdict == false )
+		boolean bVerdict = fileSortie.ajouterElement(objetPret);
+		if (bVerdict == false )
 		{
 			//unavailable, it's full
 			return false; 
@@ -84,7 +78,7 @@ public class Machine
 	{
 		System.out.println("Objet en attente :");
 		fileEntree.afficherStock();
-		System.out.println("Objet terminï¿½ :");
+		System.out.println("Objet terminé :");
 		fileSortie.afficherStock();
 	}
 	//Return time to realise a phase
@@ -100,9 +94,9 @@ public class Machine
 	{
 		try
 		{
-			double tmpsTotal;
-			double tempsPhase = this.tempsDeLaPhase(fileEntree.prochainElement());
-			tmpsTotal = tempsPhase * coeffVitesse;
+			double dTmpsTotal;
+			double dTempsPhase = this.tempsDeLaPhase(fileEntree.prochainElement());
+			dTmpsTotal = dTempsPhase * dCoeffVitesse;
 			boolean statutSortie = this.operation();
 			if ( statutSortie == false )
 			{
@@ -111,7 +105,7 @@ public class Machine
 			}
 			else
 			{
-				return tmpsTotal;
+				return dTmpsTotal;
 			}
 		}
 		catch (IndexOutOfBoundsException e)
@@ -122,7 +116,7 @@ public class Machine
 	}
 	
 	//Return number of machine
-	public int getNumeroMachine() { return numeroMachine; }
+	public int getNumeroMachine() { return iNumeroMachine; }
 	
 	//Return the size of the input stock
 	public int tailleStockEntree() { return fileEntree.tailleStock(); }
@@ -131,10 +125,10 @@ public class Machine
 	public int tailleStockSortie() { return fileSortie.tailleStock(); }
 	
 	//Return the max size of the input
-	public int getNbPlacesEntree() { return nbPlacesEntree; }
+	public int getNbPlacesEntree() { return iNbPlacesEntree; }
 	
 	//Return the max size of the output stock
-	public int getNbPlacesSortie() { return nbPlacesSortie; }
+	public int getNbPlacesSortie() { return iNbPlacesSortie; }
 
 	public Operation getOperation() {
 		return Operation;
@@ -145,11 +139,11 @@ public class Machine
 	}
 
 	public double getCoeffVitesse() {
-		return coeffVitesse;
+		return dCoeffVitesse;
 	}
 
-	public void setCoeffVitesse(double coeffVitesse) {
-		this.coeffVitesse = coeffVitesse;
+	public void setCoeffVitesse(double dCoeffVitesse) {
+		this.dCoeffVitesse = dCoeffVitesse;
 	}
 
 	public Stock getFileEntree() {
@@ -168,16 +162,16 @@ public class Machine
 		this.fileSortie = fileSortie;
 	}
 
-	public void setNumeroMachine(int numeroMachine) {
-		this.numeroMachine = numeroMachine;
+	public void setNumeroMachine(int iNumeroMachine) {
+		this.iNumeroMachine = iNumeroMachine;
 	}
 
-	public void setNbPlacesEntree(int nbPlacesEntree) {
-		this.nbPlacesEntree = nbPlacesEntree;
+	public void setNbPlacesEntree(int iNbPlacesEntree) {
+		this.iNbPlacesEntree = iNbPlacesEntree;
 	}
 
-	public void setNbPlacesSortie(int nbPlacesSortie) {
-		this.nbPlacesSortie = nbPlacesSortie;
+	public void setNbPlacesSortie(int iNbPlacesSortie) {
+		this.iNbPlacesSortie = iNbPlacesSortie;
 	}
 	public Ilot getIlotMachine() {
 		return ilotMachine;

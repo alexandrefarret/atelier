@@ -15,6 +15,7 @@ public class TUMachine {
 	{
 		int choix;
 		int resultat[] = new int[10];
+		Ilot ilotTest = new Ilot();
 		Scanner sc = new Scanner(System.in);
 		Operation OperationTest = new Operation(55, "Usinage", "Précision");
 		Phase phaseTest = new Phase(3, OperationTest, 30, "12/08/2018", "12/12/2018");
@@ -29,7 +30,7 @@ public class TUMachine {
 		int limiteSortie = sc.nextInt();
 		System.out.println("Rentrer la vitesse de la machine : ");
 		double vitesse = sc.nextDouble();
-		Machine MachineTest = new Machine(425, vitesse, OperationTest, limiteEntree, limiteSortie);
+		Machine MachineTest = new Machine(425, vitesse, OperationTest, limiteEntree, limiteSortie,ilotTest);
 		System.out.println("Objet crée avec succès");
 		System.out.println();
 		

@@ -52,6 +52,14 @@ public class Ilot {
 		this.sTypeIlot = sTypeIlot;
 		this.iParcelle = iParcelle;
 	}
+	
+	/**
+	 * Empty Contructor
+	 */
+	public Ilot()
+	{
+		
+	}
 
 	//Getters/Settters
 	public int getNombreObjetTotal() {
