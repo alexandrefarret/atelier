@@ -11,6 +11,11 @@ public class Phase {
 	protected String dateDebutPhase;
 	protected String dateFinPhase;
 	
+	public Phase()
+	{
+		//TO DO
+	}
+	
 	/**
 	 * Constructor	
 	 * @param numeroPhase Phase number
@@ -27,6 +32,18 @@ public class Phase {
 		this.tempsRealisation = tempsRealisation;
 		this.dateDebutPhase = dateDebutPhase;
 		this.dateFinPhase = dateFinPhase;
+	}
+	
+	public boolean contains(int unId)
+	{
+		if(this.numeroPhase == unId)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 	
 	// Getters/Setters

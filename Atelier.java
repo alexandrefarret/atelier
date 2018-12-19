@@ -1,8 +1,11 @@
 package ProjetAtelier;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Atelier {
 	protected String atelier;
-	protected Ilot[] lesIlots;
+	protected List<Ilot> lesIlots;
 	protected int[][] tempsTransfertParcelle;
 	protected int nombreParcelles;
 	
@@ -13,7 +16,7 @@ public class Atelier {
 	 */
 	public void deplacerIlot(Ilot unIlot, int uneParcelle){
 		boolean testExiste = false;
-		Ilot ilotTemp = new Ilot(0, null);
+		Ilot ilotTemp = new Ilot(0, null,0);
 		// Foreach island, check if parcel is use
 		// Parcel use = switch the parcels
 		// Not used parcel = the island got the parcel
@@ -63,11 +66,13 @@ public class Atelier {
 	/**
 	 * Constructor
 	 * @param atelier The name of atelier
+	 * @param nombreParcelles Quantity of parcel
 	 */
-	public Atelier(String atelier) {
-		super();
-		// TODO Auto-generated constructor stub
+	public Atelier(String atelier, int nombreParcelles) {
 		this.atelier = atelier;
+		this.lesIlots = new ArrayList<Ilot>();
+		creationTempsParcelle(nombreParcelles);
+		this.nombreParcelles = nombreParcelles;
 	}
 	
 	/**
@@ -89,20 +94,22 @@ public class Atelier {
 		this.atelier = atelier;
 	}
 
-	public Ilot[] getLesIlots() {
-		return lesIlots;
-	}
-
-	public void setLesIlots(Ilot[] lesIlots) {
-		this.lesIlots = lesIlots;
-	}
-
 	public int[][] getTempsTransfertParcelle() {
 		return tempsTransfertParcelle;
 	}
 
 	public void setTempsTransfertParcelle(int[][] tempsTransfertParcelle) {
 		this.tempsTransfertParcelle = tempsTransfertParcelle;
+	}
+
+
+	public List<Ilot> getLesIlots() {
+		return lesIlots;
+	}
+
+
+	public void setLesIlots(List<Ilot> lesIlots) {
+		this.lesIlots = lesIlots;
 	}
 	
 }

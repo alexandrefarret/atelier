@@ -4,33 +4,62 @@ public class Ilot {
 
 	protected int numeroIlot;
 	protected String typeIlot;
-//	protected Machine[] lesMachines;
+	protected static Machine[] lesMachines;
 	protected int parcelle;
-	protected int nombreObjetFile;
+	protected int nombreObjetTotal;
 	
-	// Manage the priority that is assigned to an object for each machine
-	public double gestionPriorite(int nombreObjetFile){
-		double prioriteParObjet = 100/nombreObjetFile; 
+	/**
+	 * Manage the priority that is assigned to an object for each machine
+	 * @param nombreObjetTotal Object total
+	 * @return Priority per object
+	 */
+	public double prioriteParObjet(int nombreObjetTotal){
+		double prioriteParObjet = 100/nombreObjetTotal; 
 		return prioriteParObjet;
 	}
 	
-	public static void afficherLesMachines(){
-		
+	/**
+	 * Manage the priority assigned to the machine
+	 * @param nombreObjetFile Waiting object number
+	 * @param prioriteParObjet Priority per object
+	 * @return Priority
+	 */
+	public double prioriteMachine(int nombreObjetFile, double prioriteParObjet)
+	{
+		double priorite = nombreObjetFile*prioriteParObjet;
+		return priorite;
 	}
 	
-	public Ilot(int numeroIlot, String typeIlot) {
+	/**
+	 * Display all the machines 
+	 */
+	public static void afficherLesMachines(){
+		for(Machine laMachine : lesMachines)
+		{
+			System.out.println(laMachine.numeroMachine + " - " + laMachine.Operation);
+		}
+	}
+	
+	/**
+	 * Constructor
+	 * @param numeroIlot Island number
+	 * @param typeIlot Island type
+	 * @param Location
+	 */
+	public Ilot(int numeroIlot, String typeIlot, int parcelle) {
 		super();
-		// TODO Auto-generated constructor stub
 		this.numeroIlot = numeroIlot;
 		this.typeIlot = typeIlot;
-	}
-	
-	public int getNombreObjetFile() {
-		return nombreObjetFile;
+		this.parcelle = parcelle;
 	}
 
-	public void setNombreObjetFile(int nombreObjetFile) {
-		this.nombreObjetFile = nombreObjetFile;
+	//Getters/Settters
+	public int getNombreObjetTotal() {
+		return nombreObjetTotal;
+	}
+
+	public void setNombreObjetTotal(int nombreObjetTotal) {
+		this.nombreObjetTotal = nombreObjetTotal;
 	}
 
 	public String getTypeIlot() {
@@ -41,13 +70,13 @@ public class Ilot {
 		this.typeIlot = typeIlot;
 	}
 
-/*	public Machine[] getLesMachines() {
+	public Machine[] getLesMachines() {
 		return lesMachines;
 	}
 
 	public void setLesMachines(Machine[] lesMachines) {
 		this.lesMachines = lesMachines;
-	}*/
+	}
 
 	public int getParcelle() {
 		return parcelle;

@@ -7,6 +7,10 @@ public class Operation {
 	protected String nomOperation;
 	protected String typeMachine;
 	
+	public Operation() {
+		//TO DO
+	}
+	
 	/**
 	 * Constructor
 	 * @param idOperation id of the operation

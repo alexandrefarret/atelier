@@ -18,6 +18,11 @@ public class Stock
 	protected int nbPlaces;
 	
 //******* Méthodes *******//
+	
+	public Stock()
+	{
+		//TODO
+	}
 	/**
 	 * Constructeur	
 	 * @param places Nombre de places de la file
@@ -36,13 +41,9 @@ public class Stock
 		{
 			return false;
 		}
-		else
-		{
-			listeElement.add(nouvelObjet);
-			taille = listeElement.size();
-			return true;
-		}
-
+		listeElement.add(nouvelObjet);
+		taille = listeElement.size();
+		return true;
 	}
 	
 	//Supprime le dernier élément de la file (méthode FIFO)
@@ -67,6 +68,24 @@ public class Stock
 	//Retourne le prochain objet qui va subir une opération
 	public Phase prochainElement()
 	{
-			return listeElement.get(0);
+		return listeElement.get(0);
+	}
+	public int getTaille() {
+		return taille;
+	}
+	public void setTaille(int taille) {
+		this.taille = taille;
+	}
+	public List<Phase> getListeElement() {
+		return listeElement;
+	}
+	public void setListeElement(List<Phase> listeElement) {
+		this.listeElement = listeElement;
+	}
+	public int getNbPlaces() {
+		return nbPlaces;
+	}
+	public void setNbPlaces(int nbPlaces) {
+		this.nbPlaces = nbPlaces;
 	}
 }

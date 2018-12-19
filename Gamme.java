@@ -10,13 +10,17 @@ public class Gamme {
 	protected String nomProduit;
 	protected List<Phase> lesPhases;
 	
+	public Gamme()
+	{
+		this.lesPhases = new ArrayList<Phase>();
+	}
+	
 	/**
 	 * Constructor
 	 * @param numProduit Product number
 	 * @param nomProduit Product name
 	 */
 	public Gamme(int numProduit, String nomProduit) {
-		super();
 		this.numProduit = numProduit;
 		this.nomProduit = nomProduit;
 		this.lesPhases = new ArrayList<Phase>();
